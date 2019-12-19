@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 const TeamForm = props => {
     const [Teammember, setTeamMember] = useState({
-        Username: "",
-        email: ""
+        Username: "", 
+        email: "",
+        role: ""
     });
 
     const handleChanges = event => {
@@ -12,8 +13,8 @@ const TeamForm = props => {
 
     const submitForm = event => {
         event.preventDefault();
-        props.addNewPerson(Teammember);
-        setTeamMember({ Username: "", email: ""});
+        props.addNewMember(Teammember);
+        setTeamMember({ Username: "", email: "", role: ""});
     };
 
     return(
@@ -25,7 +26,8 @@ const TeamForm = props => {
                 name="Username"
                 placeholder="Username"
                 onChange={handleChanges}
-                value={Teammember.Username}/>
+                value={Teammember.Username}
+                />
             <label htmlFor= "email">Email</label>
                 <input
                 id= "email"
@@ -33,7 +35,8 @@ const TeamForm = props => {
                 name="email"
                 placeholder="email"
                 onChange={handleChanges}
-                value={Teammember.email}/>
+                value={Teammember.email}
+                />
             <label htmlFor= "role">Role</label>
                 <input
                 id= "role"
@@ -41,12 +44,12 @@ const TeamForm = props => {
                 name="role"
                 placeholder="role"
                 onChange={handleChanges}
-                value={Teammember.email}/>
+                value={Teammember.role}/>
         
             <button type='submit'>Add</button>
         
         </form>
 
     );
-}
+};
 export default TeamForm;

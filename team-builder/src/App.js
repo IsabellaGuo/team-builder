@@ -5,27 +5,29 @@ import TeamForm from './Components/TeamForm';
 import Team from './Components/Team';
 
 function App() {
-  const [team, setTeam] = useState ([{
+  const [team, setTeam] = useState ([
+    {
     Username: "Isabella",
     email: "isabella.mozart@gmail.com",
     role: "Lambda student"
-  }]);
+    }
+  ]);
 
-  const addNewPerson = Teammember => {
+  const addNewMember = Teammember => {
     const newTeamMember = {
       id: Date.now(),
       name: Teammember.Username,
       email: Teammember.email,
       role: Teammember.role
     }
-    const newmemberArray = [...team, newTeamMember];
-    setTeam(newmemberArray);
+    setTeam([...team, newTeamMember]);
+    
   }
   return (
     <div className="App">
        <h1>Team List</h1>
-       <TeamForm addNewPerson = {addNewPerson}/>
-       <Team team={team} />
+       <TeamForm addNewMember = {addNewMember} />
+       <Team team = {team} />
     </div>
   );
 }
