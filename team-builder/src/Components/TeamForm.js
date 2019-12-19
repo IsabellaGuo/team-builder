@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const TeamForm = props => {
     const [Teammember, setTeamMember] = useState({
-        Username: "", 
+        username: "", 
         email: "",
         role: ""
     });
@@ -14,19 +14,19 @@ const TeamForm = props => {
     const submitForm = event => {
         event.preventDefault();
         props.addNewMember(Teammember);
-        setTeamMember({ Username: "", email: "", role: ""});
+        setTeamMember({ username: "", email: "", role: ""});
     };
 
     return(
         <form onSubmit={submitForm}>
-             <label htmlFor= 'Username'>Username</label>
+             <label htmlFor= "username">Username</label>
                 <input 
-                id= "Username"
+                id= "username"
                 type="text"
-                name="Username"
-                placeholder="Username"
+                name="username"
+                placeholder="username"
                 onChange={handleChanges}
-                value={Teammember.Username}
+                value={Teammember.username}
                 />
             <label htmlFor= "email">Email</label>
                 <input

@@ -7,7 +7,7 @@ import Team from './Components/Team';
 function App() {
   const [team, setTeam] = useState ([
     {
-    Username: "Isabella",
+    username: "Isabella",
     email: "isabella.mozart@gmail.com",
     role: "Lambda student"
     }
@@ -16,7 +16,7 @@ function App() {
   const addNewMember = Teammember => {
     const newTeamMember = {
       id: Date.now(),
-      name: Teammember.Username,
+      username: Teammember.username,
       email: Teammember.email,
       role: Teammember.role
     }

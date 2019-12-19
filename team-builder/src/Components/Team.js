@@ -5,7 +5,7 @@ const Team = (props) => {
        <div className = "build-list">
            {props.team.map(Teammember => (
                <div className = "build" key = {Teammember.id}>
-                   <h2>{Teammember.Username}</h2>
+                   <h2>{Teammember.username}</h2>
                    <p>{Teammember.email}</p>
                    <p>{Teammember.role}</p>
                </div>
